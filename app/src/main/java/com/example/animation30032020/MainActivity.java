@@ -12,24 +12,34 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView mImgalpha;
+    ImageView mImgalpha,mImgScale;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         mImgalpha = findViewById(R.id.imageAlpha);
+        mImgScale = findViewById(R.id.imageScale);
 
         mImgalpha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Animation animation =
-                        AnimationUtils.loadAnimation(
-                                MainActivity.this,
-                                R.anim.animation_alpha
-                        );
-                v.startAnimation(animation);
+               startAnimation(R.anim.animation_alpha,v);
             }
         });
+        mImgScale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startAnimation(R.anim.animation_scale,v);
+            }
+        });
+    }
+    public void startAnimation(int idAnim , View v){
+        Animation animation =
+                AnimationUtils.loadAnimation(
+                        MainActivity.this,
+                        idAnim
+                );
+        v.startAnimation(animation);
     }
 }
