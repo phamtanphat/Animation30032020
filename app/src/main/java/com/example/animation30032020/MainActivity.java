@@ -12,7 +12,7 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView mImgalpha,mImgScale;
+    ImageView mImgalpha,mImgScale,mImgTransition;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         mImgalpha = findViewById(R.id.imageAlpha);
         mImgScale = findViewById(R.id.imageScale);
+        mImgTransition = findViewById(R.id.imageTransition);
 
         mImgalpha.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startAnimation(R.anim.animation_scale,v);
+            }
+        });
+        mImgTransition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startAnimation(R.anim.animation_tranisition,v);
             }
         });
     }
