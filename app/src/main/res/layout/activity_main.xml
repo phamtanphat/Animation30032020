@@ -12,9 +12,15 @@
         android:layout_width="100dp"
         android:layout_height="100dp"/>
     <ImageView
-        android:layout_centerInParent="true"
+        android:layout_toEndOf="@id/imageAlpha"
         android:id="@+id/imageScale"
         android:src="@drawable/ic_wrong"
-        android:layout_width="250dp"
-        android:layout_height="250dp"/>
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+    <ImageView
+        android:layout_below="@id/imageScale"
+        android:id="@+id/imageTransition"
+        android:src="@drawable/ic_taxi"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
 </RelativeLayout>
